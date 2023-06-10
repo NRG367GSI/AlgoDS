@@ -3,9 +3,11 @@ package ru.geekbrains.lesson1.homework;
 public class Hw3 {
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();
+
         list.addAtHead(1);
         list.addAtTail(3);
         list.addAtIndex(1, 2);
+        list.addAtHead(4);
         System.out.println(list.get(1)); // 2
         list.printList(); // 1->2->3->null
         list.reversePrint(list.head); // 3->2->1->
@@ -15,13 +17,14 @@ public class Hw3 {
 class ListNode {
     int val;
     ListNode next;
-    ListNode(int x) { val = x; }
+    ListNode(int x) {
+        this.val = x;
+    }
 }
 
 class SinglyLinkedList {
     ListNode head;
 
-    public SinglyLinkedList() {}
 
     public void addAtHead(int val) {
         ListNode newHead = new ListNode(val);
